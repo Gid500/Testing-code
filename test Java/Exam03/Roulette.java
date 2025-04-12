@@ -65,13 +65,13 @@ public class Roulette {
     // 잔여횟수가 0이 아닐경우 startGame()매서드를 실행 아니면 충전해주세요를 출력
     void flag1() {
         System.out.println(leftChance != 0 ? 
-        startGame() : "잔여 횟수가 없습니다 충전해주세요.");
+        startGame() : "잔여 횟수가 없습니다 충전해주세요. 메인화면으로 돌아갑니다.");
     }
 
     int flag2(){
         int temp = 3;
         if(leftChance > 0) {
-            System.out.println("잔여 횟수가 " + leftChance + " 남았습니다");
+            System.out.println("잔여 횟수가 " + leftChance + " 남았습니다. 메인화면으로 돌아갑니다.");
             temp = 0;
         } else {
             System.out.println("기기 수익은 " + income + " 마감합니다");
@@ -95,7 +95,7 @@ public class Roulette {
                     case 3 -> command = roulette.flag2() ;
                     default -> {
                         command = 0;
-                        System.out.println("3이상의 숫자입니다 메인화면으로 돌아갑니다");
+                        System.out.println("3이상의 숫자입니다. 메인화면으로 돌아갑니다");
                     }
                 }
             }
