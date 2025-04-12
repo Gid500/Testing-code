@@ -11,7 +11,7 @@ public class Roulette {
     int income;
 
     // 룰렛의 생성자
-    Roulette() {
+    Roulette(String machineName, String locationName) {
         this.machineName = "250411922";
         this.locationName = "unknown";
         this.sucessCount = 0;
@@ -78,9 +78,10 @@ public class Roulette {
     
     public static void main(String[] args) {
         try (Scanner sc = new Scanner(System.in)) {
-            Roulette roulette = new Roulette();
+            Roulette roulette = new Roulette("", "");
             int command = 0;
             
+            System.out.println("기기이름: " + roulette.machineName + " 위치: " + roulette.locationName);
             while(command < 3){
                 roulette.menu();
                 String str1 = sc.nextLine();
