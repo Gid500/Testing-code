@@ -91,7 +91,7 @@ public class Roulette {
                     case 1 -> roulette.chargeCash();
                     case 2 -> roulette.flag1();
                     case 3 -> command = roulette.flag2() ;
-                    default -> command = 0;
+                    default -> {command = 0; System.out.println("3이상의 숫자입니다 메인화면으로 돌아갑니다");}
                 }
             }
         } catch (NumberFormatException e) {
