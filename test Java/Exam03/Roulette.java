@@ -12,8 +12,8 @@ public class Roulette {
 
     // 룰렛의 생성자
     Roulette(String machineName, String locationName) {
-        this.machineName = "250411922";
-        this.locationName = "unknown";
+        this.machineName = machineName;
+        this.locationName = locationName; 
         this.sucessCount = 0;
         this.failedCount = 0;
         this.totalPoint = 0;
@@ -31,11 +31,14 @@ public class Roulette {
         Scanner sc = new Scanner(System.in);
         String str2 = sc.nextLine();
         int cmoney = Integer.parseInt(str2);
-        income += cmoney;
-        System.out.println(
-            cmoney >= 1000 && cmoney % 1000 == 0 ? 
-        "충전된 횟수는 " + (leftChance += cmoney/500) + "입니다.":"1000원 단위로 돈을 넣어주세요.");
-        // +=식으로 사용해서 연속충전시 횟수가 누적된다.
+
+        if(cmoney >= 1000 && cmoney % 1000 == 0){
+            income += cmoney;
+            System.out.println("충전된 횟수는 " + (leftChance += cmoney/500) + "입니다.");
+        } else {
+            System.out.println("1000원 단위로 돈을 넣어주세요.");
+        }
+        // +=식으로 사용해서 연속충전시 횟수가 누적된다.  
     }
 
     // 게임 시작 메서드
@@ -66,22 +69,21 @@ public class Roulette {
     }
 
     int flag2(){
-        int binary = 3;
+        int temp = 3;
         if(leftChance > 0) {
             System.out.println("잔여 횟수가 " + leftChance + " 남았습니다");
-            binary = 0;
+            temp = 0;
         } else {
             System.out.println("기기 수익은 " + income + " 마감합니다");
         }
-        return binary;
+        return temp;
     }
     
     public static void main(String[] args) {
         try (Scanner sc = new Scanner(System.in)) {
-            Roulette roulette = new Roulette("", "");
+            Roulette roulette = new Roulette("250411922", "unknown");
             int command = 0;
             
-            System.out.println("기기이름: " + roulette.machineName + " 위치: " + roulette.locationName);
             while(command < 3){
                 roulette.menu();
                 String str1 = sc.nextLine();
@@ -91,7 +93,10 @@ public class Roulette {
                     case 1 -> roulette.chargeCash();
                     case 2 -> roulette.flag1();
                     case 3 -> command = roulette.flag2() ;
-                    default -> {command = 0; System.out.println("3이상의 숫자입니다 메인화면으로 돌아갑니다");}
+                    default -> {
+                        command = 0;
+                        System.out.println("3이상의 숫자입니다 메인화면으로 돌아갑니다");
+                    }
                 }
             }
         } catch (NumberFormatException e) {
