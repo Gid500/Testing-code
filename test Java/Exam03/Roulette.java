@@ -54,7 +54,9 @@ public class Roulette {
                 ++failedCount;
             }
         }
-        String result = "성공 횟수는 : " + sucessCount + "\n실패 횟수는 : " + failedCount + "\n종합 점수는 : " + totalPoint;
+        String result = "성공 횟수는 : " + sucessCount + 
+        "\n실패 횟수는 : " + failedCount + 
+        "\n종합 점수는 : " + totalPoint;
         sucessCount = 0;
         failedCount = 0;
         totalPoint = 0;

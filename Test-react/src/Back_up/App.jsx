@@ -5,7 +5,7 @@ import Food from "./Food.jsx";
 function App() {
 
   return(
-    // 사용할 메인 페이지에는 <></>를 문법적으로 사용해야함 
+    // 한게 이상의 dom을 사용해야할때 사용할 메인 페이지에는 <></>를 문법적으로 사용해야함 
     <>
       <Header></Header>
       <Food></Food>
