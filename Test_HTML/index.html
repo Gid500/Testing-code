@@ -18,7 +18,7 @@
 		}
 		.header-div{
             width: 1280px;
-            height: 60px;
+            height: 66px;
 			display: flex; 
             align-items: center; 
             justify-content: space-between;
@@ -54,7 +54,7 @@
             padding: 10px 20px;
             border-radius: 6.5px;
 		}
-        .sideWrapper{
+        .sideWrapper {
             width: 200px;
 			display: flex; 
             height: 63px;
@@ -144,7 +144,7 @@
         }
         #togle-sidebar:checked ~ .menu-btn{
             display: block;
-            animation: fadein 0.5s;
+            animation: fadein 0.7s;
             left: 330px;
         }
         @keyframes fadein{
@@ -214,6 +214,24 @@
                 width: 80px;
             }
         }
+
+        .side-drop{
+            margin: 0;
+            padding: 0;
+        }
+        .side-drop .side-item{
+            display: none;
+        }
+        .side-drop .side-item a{
+            padding-left: 20px;
+        }
+        .sidebar-menu .side-item a i {
+            transform: translateY(-50%);
+            transition: all .5s cubic-bezier(0.075, 0.82, 0,165, 1);
+        }
+        .sidebar-menu .side-item:hover a i {
+            transform: rotate(180deg);
+        }
 	</style>
 </head>
     <body>
@@ -227,7 +245,11 @@
                 <div class="login-area"><a href="#">Login Side</a></div>
                 <ul class="sidebar-menu">
                     <li class="side-item"><a href="#">item1</a></li>
-                    <li class="side-item"><a href="#">item2</a></li>
+                    <li class="side-item"><a href="#">item2 <i class="fa-solid fa-sort-down"></i></a></li>
+                    <ul class="side-drop">
+                        <li class="side-item"><a href="#">side item</a></li>
+                        <li class="side-item"><a href="#">side item</a></li>
+                    </ul>
                     <li class="side-item"><a href="#">item3</a></li>
                     <li class="side-item"><a href="#">item4</a></li>
                     <li class="side-item"><a href="#">item5</a></li>
@@ -265,5 +287,6 @@
             </div>
         </header>
 
+        <script></script>
     </body>
 </html>
