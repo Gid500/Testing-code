@@ -6,11 +6,9 @@ public class Rulette {
 
 	final String MACHINEID = "250410923";
 	final String LOCATION = "Cheonan-City";
-
 	int totalPoint = 0;
 	int successCount = 0;
 	int failCount = 0;
-
 	static int leftOverChance = 0;
 	static int income = 0;
 
