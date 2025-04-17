@@ -10,6 +10,8 @@ public class Roulette {
     int leftChance;
     int income;
 
+    Scanner sc = new Scanner(System.in);
+
     // 룰렛의 생성자
     Roulette(String machineName, String locationName) {
         this.machineName = machineName;
@@ -22,19 +24,25 @@ public class Roulette {
     }
 
     // 메뉴 메서드
-    void menu(){
+    int menu(){
         System.out.println("1.충전 2.게임시작 3.마감");
+        String str1 = sc.nextLine();
+        int num1 = Integer.parseInt(str1);
+        return num1;
+    }
+
+    int getchance(int momney) {
+        return leftChance += momney/500;
     }
 
     // 횟수 충전
     void chargeCash() {
-        Scanner sc = new Scanner(System.in);
         String str2 = sc.nextLine();
         int cmoney = Integer.parseInt(str2);
 
         if(cmoney >= 1000 && cmoney % 1000 == 0){
             income += cmoney;
-            System.out.println("충전된 횟수는 " + (leftChance += cmoney/500) + "입니다.");
+            System.out.println("충전된 횟수는 " + getchance(cmoney) + " 회 입니다.");
         } else {
             System.out.println("1000원 단위로 돈을 넣어주세요.");
         }
@@ -59,8 +67,8 @@ public class Roulette {
         "\n종합 점수는 : " + totalPoint;
         sucessCount = 0;
         failedCount = 0;
-        totalPoint = 0;
         leftChance = 0;
+        totalPoint = 0;
         return result;
     }
 
@@ -71,7 +79,7 @@ public class Roulette {
     }
 
     int flag2(){
-        int temp = 3;
+        int temp = -1;
         if(leftChance > 0) {
             System.out.println("잔여 횟수가 " + leftChance + " 남았습니다. 메인화면으로 돌아갑니다.");
             temp = 0;
@@ -85,12 +93,9 @@ public class Roulette {
         try (Scanner sc = new Scanner(System.in)) {
             Roulette roulette = new Roulette("250411922", "unknown");
             int command = 0;
-            
-            while(command < 3){
-                roulette.menu();
-                String str1 = sc.nextLine();
-                int num1 = Integer.parseInt(str1);
-                command = num1;
+
+            while(command < -1){
+                command = roulette.menu();
                 switch (command) {
                     case 1 -> roulette.chargeCash();
                     case 2 -> roulette.flag1();

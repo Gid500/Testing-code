@@ -1,5 +1,3 @@
-package example03;
-
 import java.util.Scanner;
 
 public class Rulette {

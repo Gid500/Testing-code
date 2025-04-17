@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="Register.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body>
+        <form id="registerForm">
+            <h2>Register</h2>
+            <input type="text" id="name" placeholder="Name" required />
+            <input type="text" id="username" placeholder="Username" required />
+            <input type="password" id="password" placeholder="Password" required />
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Confirm Password"
+              required
+              />
+            <button type="submit">Register</button>
+            &nbsp;<a href="login.html">Go to Login</a>
+          </form>
+        
+        <script src="node_modules/jquery-3.7.1.min.js"></script>
+        <script src="sweetalert/node_modules/sweetalert2/dist/sweetalert2.js"></script>
+        <script src="Register.js"></script>
+    </body>
+</html>
