@@ -1,7 +1,0 @@
-{
-    "java.debug.settings.onBuildFailureProceed": true,
-    "C_Cpp.default.compilerPath": "C:/MinGW/bin/gcc.exe",
-    "editor.bracketPairColorization.independentColorPoolPerBracketType": false,
-    "C_Cpp.vcFormat.wrap.preserveBlocks": "oneLiners",
-    "chat.editor.wordWrap": "on"
-}
